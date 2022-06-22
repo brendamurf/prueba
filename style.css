@@ -1,0 +1,49 @@
+/* Para activar grid se aplica display grid en el contenedor padre */
+
+.grid-container{
+    /* Habilita la función de grid */
+    display: grid;
+
+    /* Definir filas */
+    grid-template-rows: 150px 150px 150px;
+
+    /* Definir columnas */
+    /* Para que me quede exacto si quiero completar el ancho de la pantalla se usan FRACCIONES */
+    grid-template-columns: repeat(3, 1fr); /* 1fr 1fr 1fr */
+
+    border: 3px solid red;
+
+    /* Espacio entre celdas */
+    gap: 10px;
+
+    /* Areas: otra forma de aplicar grid */
+}
+
+.grid-item{
+    border: solid 2px palevioletred;
+}
+
+/* Pseudoclase :first-child. Se puede aplicar en CSS independientemente del método */
+.grid-item:first-child{
+    /* Una celda que empiece y termine en una columna específica */
+    /*grid-column-start: 1;
+    grid-column-end: 3;*/
+    
+    /* Una celda empiece y termine en una fila específica */ 
+    /*grid-row-start: 1;
+    grid-row-end: 3;*/
+
+    /* Para hacer esto más rápido */
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;  
+
+    /* Span (distinta a la etiqueta en HTML) en CSS le indica al elemento que ocupe columnas o filas */
+    /* grid-row: 1 / span 3; queda igual que lo de arriba */
+}
+
+/* Imágenes: para que cubran a su contenedor */
+
+.grid-item img{
+    height: 100%;
+    width: 100%;
+}
